@@ -1,0 +1,17 @@
+Options -Indexes
+
+# Security headers
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Rewrite all requests through index.php (except real files/dirs)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Block access to sensitive files
+<FilesMatch "\.(json|sql|lock|md|env|sh|log)$">
+    Require all denied
+</FilesMatch>

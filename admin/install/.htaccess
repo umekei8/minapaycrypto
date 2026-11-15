@@ -1,0 +1,6 @@
+# Block access after installation
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{DOCUMENT_ROOT}/../config/installed.lock -f
+RewriteRule ^ - [F,L]
+</IfModule>
