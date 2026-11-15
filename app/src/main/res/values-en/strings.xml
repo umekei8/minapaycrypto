@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MinaPay Crypto POS</string>
+    <string name="demo_mode_banner">⚠ DEMO MODE — Transactions are not real ⚠</string>
+    <string name="amount_payment_label">Payment Amount</string>
+    <string name="amount_fetching_rate">Fetching rate…</string>
+    <string name="amount_start_payment">Show QR Code</string>
+    <string name="amount_history_chip">History</string>
+    <string name="amount_settings_chip">Settings</string>
+    <string name="amount_preview_rate_fmt">Rate: ¥%1$s / %2$s</string>
+    <string name="error_enter_amount">Please enter an amount</string>
+    <string name="error_rate_fetch_failed">Failed to fetch exchange rate</string>
+    <string name="error_generic_fmt">Error: %1$s</string>
+    <string name="back_arrow">← Back</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_language_section">Language</string>
+</resources>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MinaPay Crypto POS</string>
+    <string name="demo_mode_banner">⚠ DEMO MODE — 実際の決済は行われません ⚠</string>
+    <string name="amount_payment_label">お支払い金額</string>
+    <string name="amount_fetching_rate">レート取得中…</string>
+    <string name="amount_start_payment">QRコードを表示</string>
+    <string name="amount_history_chip">履歴</string>
+    <string name="amount_settings_chip">設定</string>
+    <string name="amount_preview_rate_fmt">レート：¥%1$s / %2$s</string>
+    <string name="error_enter_amount">金額を入力してください</string>
+    <string name="error_rate_fetch_failed">レート取得に失敗しました</string>
+    <string name="error_generic_fmt">エラー: %1$s</string>
+    <string name="back_arrow">← 戻る</string>
+    <string name="settings_title">設定</string>
+    <string name="settings_language_section">言語</string>
+</resources>
