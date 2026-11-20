@@ -1,0 +1,14 @@
+# MinaPay Crypto Installer — アクセス制限
+# install.php 以外のファイルへの直接アクセスを拒否
+
+Options -Indexes
+
+# .htaccess 自体へのアクセスを拒否
+<Files ".htaccess">
+  Require all denied
+</Files>
+
+# .installer_done（完了フラグ）へのアクセスを拒否
+<Files ".installer_done">
+  Require all denied
+</Files>
