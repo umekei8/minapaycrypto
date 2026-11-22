@@ -1,330 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinaPay Crypto — 暗号資産決済を、お店に。</title>
-  <meta name="description" content="MinaPay Cryptoは、BTC・ETH・XRP・JPYCなど主要暗号資産に対応したPOS型決済サービスです。QRコードをかざすだけで、素早く安全な決済が完了します。">
-  <meta name="keywords" content="暗号資産決済,仮想通貨,Bitcoin,Ethereum,XRP,JPYC,POS,決済端末,加盟店">
-  <meta property="og:title" content="MinaPay Crypto — 暗号資産決済を、お店に。">
-  <meta property="og:description" content="BTC・ETH・XRP・JPYCに対応。QRコードで素早く安全な決済。">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;700;800&display=swap">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="MinaPay Cryptoは、店舗・事業者向けの暗号資産決済サービスです。" />
+  <title>MinaPay Crypto｜店舗・事業者向け暗号資産決済</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.003d0d780cb4.css" />
 </head>
 <body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top"><img src="./assets/minapay-crypto-logo.png" alt="MinaPay Crypto" /></a>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a href="#terminal">決済端末</a><a href="#benefits">導入メリット</a><a href="#service">サービス</a><a href="#pricing">料金</a><a href="#flow">導入の流れ</a><a href="#faq">よくある質問</a>
+      </nav>
+      <a class="header-cta" href="#contact">導入について相談する</a>
+      <button class="menu" type="button" aria-label="メニュー" aria-expanded="false">MENU</button>
+    </div>
+  </header>
 
-<!-- ナビゲーション -->
-<header class="header" id="header">
-  <div class="container header-inner">
-    <a href="#" class="logo">
-      <img src="assets/img/logo.png" alt="MinaPay Crypto" class="logo-img">
-    </a>
-    <nav class="nav" id="nav">
-      <a href="#features">特徴</a>
-      <a href="#currencies">対応通貨</a>
-      <a href="#how">導入の流れ</a>
-      <a href="#pricing">料金</a>
-      <a href="#contact" class="btn btn-nav">お問い合わせ</a>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="label"><span></span>FOR MERCHANTS &amp; BUSINESS</div>
+          <h1>暗号資産を、<br /><em>新しい売上</em>に。</h1>
+          <p class="hero-lead">MinaPay Cryptoは、店舗・事業者向けの暗号資産決済サービスです。専用端末で、世界中のお客様に新しい支払いの選択肢を。</p>
+          <div class="hero-actions"><a class="button primary" href="#contact">導入について相談する <b>↗</b></a><a class="button secondary" href="#service">サービスを見る <b>↓</b></a></div>
+          <div class="hero-facts"><div><strong>24/365</strong><span>ブロックチェーン決済</span></div><div><strong>NON-CUSTODIAL</strong><span>暗号資産を預からない設計</span></div><div><strong>2027.01</strong><span>リリース予定</span></div></div>
+        </div>
+        <div class="hero-product">
+          <div class="red-orbit"></div>
+          <img src="./assets/terminal/terminal-hero.jpeg" alt="MinaPay Crypto決済完了画面を表示した店舗向け決済端末" />
+          <div class="product-tag"><span>CRYPTO PAYMENT TERMINAL</span><strong>店舗に、新しい決済体験を。</strong></div>
+        </div>
+      </div>
+    </section>
 
-<!-- ヒーロー -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <p class="hero-badge">🚀 新しい決済体験</p>
-      <h1 class="hero-title">暗号資産決済を、<br>お店に。</h1>
-      <p class="hero-sub">BTC・ETH・XRP・JPYCなど主要暗号資産に対応。<br>QRコードをかざすだけで、素早く安全な決済が完了します。</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary btn-lg">無料で導入を相談する</a>
-        <a href="#how" class="btn btn-outline btn-lg">導入の流れを見る</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">5</span>
-          <span class="stat-label">対応通貨</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">10秒</span>
-          <span class="stat-label">決済完了</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">0円</span>
-          <span class="stat-label">初期費用</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="terminal-frame">
-        <img src="assets/img/terminal.jpg" alt="MinaPay Crypto 決済端末" class="terminal-img">
-        <div class="terminal-badge">ZCS Z108</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="asset-strip" aria-label="対応予定の暗号資産">
+      <div class="container asset-row"><p><b>DIGITAL ASSETS</b><span>対応予定の暗号資産・BCDCは準備中</span></p></div>
+      <div class="asset-viewport"><div class="asset-track">
+        <div class="asset-chip"><img src="./assets/coins/1.png" alt="Bitcoin" /></div><div class="asset-chip"><img src="./assets/coins/6.png" alt="XRP" /></div><div class="asset-chip"><img src="./assets/coins/2.png" alt="Ethereum" /></div><div class="asset-chip"><img src="./assets/coins/3.png" alt="USDC" /></div><div class="asset-chip"><img src="./assets/coins/5.png" alt="Solana" /></div><div class="asset-chip pending"><img src="./assets/coins/bcdc.png" alt="BCDC" /><span>準備中</span></div>
+        <div class="asset-chip" aria-hidden="true"><img src="./assets/coins/1.png" alt="" /></div><div class="asset-chip" aria-hidden="true"><img src="./assets/coins/6.png" alt="" /></div><div class="asset-chip" aria-hidden="true"><img src="./assets/coins/2.png" alt="" /></div><div class="asset-chip" aria-hidden="true"><img src="./assets/coins/3.png" alt="" /></div><div class="asset-chip" aria-hidden="true"><img src="./assets/coins/5.png" alt="" /></div><div class="asset-chip pending" aria-hidden="true"><img src="./assets/coins/bcdc.png" alt="" /><span>準備中</span></div>
+      </div></div>
+    </section>
 
-<!-- 特徴 -->
-<section class="section" id="features">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">FEATURES</p>
-      <h2 class="section-title">MinaPay Cryptoの特徴</h2>
-      <p class="section-desc">次世代の決済インフラを、シンプルに。</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>即時決済・リアルタイム確認</h3>
-        <p>XRPはWebSocketによるリアルタイム検知、BTCはmempool監視と通貨ごとに最適化した監視方式で、スムーズな決済体験を提供します。</p>
+    <section class="terminal-showcase" id="terminal">
+      <div class="container terminal-intro">
+        <div>
+          <div class="label"><span></span>MINAPAY CRYPTO TERMINAL</div>
+          <h2>店舗のために生まれた、<br /><em>暗号資産決済端末。</em></h2>
+        </div>
+        <div class="terminal-intro-copy">
+          <p>決済受付から取引確認、レシート印刷までを一台で。MinaPay Cryptoは、日々の店舗運営に自然に組み込める専用端末を目指しています。</p>
+          <div class="terminal-specs"><span>TOUCH DISPLAY</span><span>RECEIPT PRINTER</span><span>TRANSACTION HISTORY</span></div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>ノンカストディ設計</h3>
-        <p>秘密鍵は一切預かりません。加盟店の受取ウォレットアドレスのみを管理。資産の主権は常にお客様（加盟店）にあります。</p>
+      <div class="terminal-stage">
+        <div class="terminal-stage-main">
+          <span class="photo-index">01 / FRONT</span>
+          <img src="./assets/terminal/terminal-front.jpeg" alt="MinaPay Crypto決済端末 正面" loading="lazy" />
+        </div>
+        <div class="terminal-stage-side">
+          <figure><span class="photo-index">02 / ANGLE</span><img src="./assets/terminal/terminal-angle-left.jpeg" alt="MinaPay Crypto決済端末 斜めからの外観" loading="lazy" /></figure>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📱</div>
-        <h3>QRコードで簡単決済</h3>
-        <p>専用POS端末にQRコードが表示されるだけ。お客様はウォレットアプリでスキャンするだけで決済完了。操作は誰でも直感的に使えます。</p>
+      <div class="container terminal-feature-row">
+        <article><b>01</b><h3>決済結果を明確に表示</h3><p>日本円金額、暗号資産の数量、加盟店受取額、確認数を一画面で確認できます。</p></article>
+        <article><b>02</b><h3>レシートをその場で印刷</h3><p>プリンター一体型の端末で、会計後の案内まで店舗カウンターで完結します。</p></article>
+        <article><b>03</b><h3>店舗で扱いやすい一体型</h3><p>タッチディスプレイ、履歴確認、設定メニューを備えた店舗向け端末です。</p></article>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🧾</div>
-        <h3>レシート印刷・二画面対応</h3>
-        <p>決済完了後、即時にレシートを印刷。お客様向けの二画面表示も対応し、JPY換算額をリアルタイムで提示します。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>管理画面で一元管理</h3>
-        <p>決済履歴・加盟店管理・ウォレット管理をWebブラウザから操作。売上レポートや通貨別集計も一目で確認できます。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">💱</div>
-        <h3>リアルタイムレート適用</h3>
-        <p>CoinGeckoの最新レートを取得し、JPY換算額を自動計算。マークアップ率も設定可能で、適切な為替リスク管理が可能です。</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 対応通貨 -->
-<section class="section section-dark" id="currencies">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">CURRENCIES</p>
-      <h2 class="section-title">対応暗号資産</h2>
-      <p class="section-desc">主要な暗号資産に幅広く対応しています。</p>
-    </div>
-    <div class="currencies-grid">
-      <div class="currency-card">
-        <img src="assets/img/btc.png" alt="Bitcoin" class="currency-icon">
-        <h3>Bitcoin</h3>
-        <p class="currency-ticker">BTC</p>
-        <p class="currency-desc">世界最大の暗号資産。mempool.spaceによるリアルタイム監視で1承認後に決済完了。</p>
-        <span class="currency-badge">即時受付</span>
+    <section class="section problem" id="benefits">
+      <div class="container">
+        <div class="section-head"><div><div class="label"><span></span>WHY MINAPAY CRYPTO</div><h2>その決済ニーズ、<br />取りこぼしていませんか？</h2></div><p>訪日外国人や暗号資産保有者が増えるなか、店舗の支払い手段にも新しい選択肢が求められています。</p></div>
+        <div class="benefit-grid">
+          <article><div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 34V14h32v20H8Z"/><path d="M14 28h8m4-8h8m-8 6h8"/><circle cx="17" cy="21" r="3"/></svg></div><b>01</b><h3>新しい顧客層へ</h3><p>暗号資産を保有する国内外のお客様に、利用しやすい店舗体験を提供します。</p></article>
+          <article><div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="13" y="7" width="22" height="34" rx="3"/><path d="M18 13h12M18 34h12"/><circle cx="24" cy="24" r="5"/></svg></div><b>02</b><h3>専用端末でシンプル</h3><p>既存のレジ環境と併用しやすい端末型。店舗オペレーションへの負担を抑えます。</p></article>
+          <article><div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6 39 12v10c0 10-6 17-15 21C15 39 9 32 9 22V12l15-6Z"/><path d="m17 24 5 5 10-11"/></svg></div><b>03</b><h3>非カストディ型</h3><p>加盟店が用意したウォレットへ直接送金。MinaPay Cryptoは秘密鍵や暗号資産を預かりません。</p></article>
+        </div>
       </div>
-      <div class="currency-card">
-        <img src="assets/img/eth.png" alt="Ethereum" class="currency-icon">
-        <h3>Ethereum</h3>
-        <p class="currency-ticker">ETH</p>
-        <p class="currency-desc">スマートコントラクトの基盤。Etherscan APIで8秒ごとにポーリング、1承認で確定。</p>
-        <span class="currency-badge">1承認で確定</span>
-      </div>
-      <div class="currency-card currency-card-featured">
-        <img src="assets/img/xrp.png" alt="XRP" class="currency-icon">
-        <h3>XRP</h3>
-        <p class="currency-ticker">XRP</p>
-        <p class="currency-desc">高速・低コストの国際送金特化。WebSocket接続でプッシュ通知を受信、最速3〜5秒で確定。</p>
-        <span class="currency-badge currency-badge-fast">最速確定</span>
-      </div>
-      <div class="currency-card">
-        <img src="assets/img/jpyc.png" alt="JPYC" class="currency-icon">
-        <h3>JPYC</h3>
-        <p class="currency-ticker">JPYC</p>
-        <p class="currency-desc">日本円連動ステーブルコイン（ERC-20）。為替リスクなしで安心して受け取れます。</p>
-        <span class="currency-badge">ステーブル</span>
-      </div>
-      <div class="currency-card">
-        <img src="assets/img/sol.png" alt="Solana" class="currency-icon">
-        <h3>Solana</h3>
-        <p class="currency-ticker">SOL</p>
-        <p class="currency-desc">高速・低手数料のブロックチェーン。急成長するエコシステムで注目度も高い通貨です。</p>
-        <span class="currency-badge">Coming Soon</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 導入の流れ -->
-<section class="section" id="how">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">HOW IT WORKS</p>
-      <h2 class="section-title">導入の流れ</h2>
-      <p class="section-desc">最短1週間でお店で暗号資産決済が使えるようになります。</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h3>お問い合わせ・ご相談</h3>
-          <p>フォームまたはメールでお問い合わせください。サービス内容や料金について丁寧にご説明します。</p>
-        </div>
+    <section class="section service" id="service">
+      <div class="container service-grid">
+        <div class="service-visual"><img src="./assets/terminal/terminal-angle-left.jpeg" alt="MinaPay Crypto決済完了画面" /><span>MINAPAY CRYPTO / MERCHANT SOLUTION</span></div>
+        <div class="service-copy"><div class="label white"><span></span>MERCHANT SOLUTION</div><h2>いつもの会計に、<br />暗号資産という選択肢。</h2><p>MinaPay Cryptoは、利用者のウォレットから店舗への支払い体験を支える暗号資産決済端末です。端末に表示される案内に沿って操作し、店舗で取引状況を確認できます。</p><ul><li><b>01</b><span><strong>端末型で導入しやすい</strong>既存のPOS・レジ環境と併用しやすい設計</span></li><li><b>02</b><span><strong>グローバルな決済需要へ</strong>訪日外国人を含む幅広いお客様を想定</span></li><li><b>03</b><span><strong>24時間365日の決済基盤</strong>ブロックチェーンの特性を活用</span></li></ul></div>
       </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h3>加盟店登録・ウォレット設定</h3>
-          <p>各通貨の受取ウォレットアドレスをご用意ください。秘密鍵は不要です。管理画面から簡単に登録できます。</p>
-        </div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h3>端末のお渡し・設定</h3>
-          <p>専用POS端末（ZCS Z108）をお届けします。初期設定はサポートチームが対応しますのでご安心ください。</p>
-        </div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <h3>スタート！</h3>
-          <p>端末の電源を入れるだけで即日利用開始。決済が入るたびにウォレットに直接着金します。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 料金 -->
-<section class="section section-gray" id="pricing">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">PRICING</p>
-      <h2 class="section-title">シンプルな料金体系</h2>
-      <p class="section-desc">初期費用ゼロ。決済が発生したときだけ費用が生じます。</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <h3>スタンダードプラン</h3>
-          <p class="pricing-price"><span class="price-main">0</span><span class="price-unit">円</span><span class="price-period">/ 初期費用</span></p>
+    <section class="section custody" id="non-custodial">
+      <div class="container">
+        <div class="custody-head">
+          <div><div class="label"><span></span>NON-CUSTODIAL ARCHITECTURE</div><h2>暗号資産は、<br /><em>加盟店のウォレットへ直接。</em></h2></div>
+          <p>MinaPay Crypto専用のウォレットに暗号資産が貯まる仕組みではありません。お客様が支払った暗号資産は、加盟店が用意・指定したウォレットへ、ブロックチェーン上で直接送金されます。</p>
         </div>
-        <ul class="pricing-list">
-          <li>✅ 月額固定費なし</li>
-          <li>✅ 決済手数料のみ（決済額の一定率）</li>
-          <li>✅ BTC / ETH / XRP / JPYC 対応</li>
-          <li>✅ 管理画面（決済履歴・レポート）</li>
-          <li>✅ レシートプリンター内蔵端末</li>
-          <li>✅ 二画面（お客様向け表示）対応</li>
-          <li>✅ メールサポート</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary btn-block">今すぐ相談する</a>
-      </div>
-      <div class="pricing-note">
-        <h4>💡 手数料について</h4>
-        <p>決済手数料は決済金額に対して一定率となります。詳細はお問い合わせの際にご案内します。ブロックチェーンのネットワーク手数料（ガス代など）はお客様（決済者）が負担します。</p>
-        <h4>🔒 安心のノンカストディ</h4>
-        <p>当サービスは資金を一切預かりません。決済された暗号資産は直接加盟店のウォレットに送金されます。秘密鍵の管理は不要で、セキュリティリスクを最小化します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- お問い合わせ -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="section-head">
-      <p class="section-label">CONTACT</p>
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-desc">導入のご相談・ご質問はお気軽にどうぞ。</p>
-    </div>
-    <div class="contact-wrap">
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">お名前 <span class="required">必須</span></label>
-            <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+        <div class="custody-badges">
+          <article><div class="custody-badge-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 18h28v21H10z"/><path d="M15 18v-5h21v5M16 29h16"/><path class="slash" d="M8 8l32 32"/></svg></div><div><b>NO HOLDING</b><h3>暗号資産を保有しない</h3><p>MinaPay Crypto内に資産を滞留させません。</p></div></article>
+          <article><div class="custody-badge-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="19" cy="21" r="8"/><path d="M25 27l13 13m-5-5 4-4m-8 0 4-4"/><path class="slash" d="M8 8l32 32"/></svg></div><div><b>NO PRIVATE KEYS</b><h3>秘密鍵を管理しない</h3><p>秘密鍵はお客様・加盟店自身が管理します。</p></div></article>
+          <article><div class="custody-badge-icon accent" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 15h15v25H7zM26 8h15v25H26z"/><path d="M14 21h20"/><path d="m29 16 6 5-6 5"/></svg></div><div><b>DIRECT TRANSFER</b><h3>加盟店ウォレットへ直接</h3><p>ブロックチェーン上で加盟店へ直接送金します。</p></div></article>
+        </div>
+        <div class="architecture-panel" aria-label="お客様のウォレットから加盟店所有ウォレットへブロックチェーン上で直接送金される仕組み">
+          <div class="architecture-head">
+            <div><span>DIRECT ON-CHAIN SETTLEMENT</span><h3>決済資産は、加盟店自身のウォレットへ。</h3></div>
+            <div class="architecture-status"><span>NO CUSTODY</span><span>NO PRIVATE KEY CONTROL</span></div>
           </div>
-          <div class="form-group">
-            <label for="company">会社名・店舗名</label>
-            <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+          <div class="architecture-flow">
+            <article class="architecture-node">
+              <div class="node-top"><span>01</span><div class="node-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="17" cy="15" r="7"/><path d="M6 39c1-10 6-16 11-16s10 6 11 16"/><rect x="25" y="22" width="17" height="13" rx="2"/><circle cx="36" cy="28.5" r="1.5"/></svg></div></div>
+              <small>CUSTOMER CONTROLLED</small><h3>お客様のウォレット</h3><p>お客様自身が秘密鍵を管理し、決済内容を確認して送金します。</p>
+              <dl><div><dt>秘密鍵</dt><dd>お客様が管理</dd></div><div><dt>送金操作</dt><dd>お客様が実行</dd></div></dl>
+            </article>
+            <div class="network-core">
+              <div class="network-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="7" y="24" width="16" height="16" rx="2"/><rect x="41" y="8" width="16" height="16" rx="2"/><rect x="41" y="40" width="16" height="16" rx="2"/><path d="M23 32h9l9-16M32 32l9 16"/></svg></div>
+              <small>PUBLIC BLOCKCHAIN</small><strong>直接送金</strong>
+              <svg class="architecture-arrow arrow-horizontal" viewBox="0 0 170 28" aria-hidden="true"><circle cx="8" cy="14" r="5"/><path d="M16 14h140"/><path d="m145 4 11 10-11 10"/></svg>
+              <svg class="architecture-arrow arrow-vertical" viewBox="0 0 28 120" aria-hidden="true"><circle cx="14" cy="8" r="5"/><path d="M14 16v90"/><path d="m4 95 10 11 10-11"/></svg>
+              <p>MinaPay Cryptoを経由して<br />資産を保管しません</p>
+            </div>
+            <article class="architecture-node merchant-node">
+              <div class="node-top"><span>02</span><div class="node-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 19h34v23H7z"/><path d="M10 19l4-11h20l4 11M5 19h38M16 19v23M32 19v23"/><rect x="20" y="31" width="8" height="11"/></svg></div></div>
+              <small>MERCHANT OWNED</small><h3>加盟店所有ウォレット</h3><p>加盟店が用意・指定したウォレットで、暗号資産を直接受け取ります。</p>
+              <dl><div><dt>受取先</dt><dd>加盟店指定</dd></div><div><dt>資産管理</dt><dd>加盟店が管理</dd></div></dl>
+            </article>
           </div>
+          <div class="architecture-role"><strong>MINAPAY CRYPTO</strong><div><span>決済金額の表示</span><span>送金先QRの提示</span><span>オンチェーン確認</span></div><p><b>行わないこと</b>　暗号資産の保管・秘密鍵の管理</p></div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">メールアドレス <span class="required">必須</span></label>
-            <input type="email" id="email" name="email" placeholder="info@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">電話番号</label>
-            <input type="tel" id="phone" name="phone" placeholder="03-0000-0000">
-          </div>
+        <div class="regulation-panel">
+          <div class="regulation-title"><span>JAPAN REGULATORY FRAMEWORK</span><h3>日本国内の関係法令を踏まえた設計・運用</h3></div>
+          <div class="regulation-copy"><p>資金決済法では、暗号資産の売買・交換、その媒介、または他人のための暗号資産管理を業として行う場合、暗号資産交換業の登録対象となります。MinaPay Cryptoは、利用者や加盟店の暗号資産を預からず、秘密鍵を管理しない非カストディ型を基本設計とし、サービス提供形態に応じて専門家による法務・コンプライアンス確認を行いながら、日本国内の関係法令・ガイドラインに沿った運用体制を整備します。</p><small>※ 暗号資産交換業等への該当性は、具体的なサービス仕様および運用実態に基づき個別に判断されます。</small></div>
         </div>
-        <div class="form-group">
-          <label for="inquiry">お問い合わせ種別 <span class="required">必須</span></label>
-          <select id="inquiry" name="inquiry" required>
-            <option value="">選択してください</option>
-            <option value="intro">導入のご相談</option>
-            <option value="demo">デモのご依頼</option>
-            <option value="pricing">料金のご確認</option>
-            <option value="other">その他</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">メッセージ</label>
-          <textarea id="message" name="message" rows="5" placeholder="ご質問・ご要望をご記入ください。"></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">送信する</button>
-        </div>
-        <div class="form-notice" id="formNotice" hidden></div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- フッター -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img src="assets/img/logo.png" alt="MinaPay Crypto" class="footer-logo">
-      <p class="footer-tagline">暗号資産決済を、お店に。</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>サービス</h4>
-        <a href="#features">特徴</a>
-        <a href="#currencies">対応通貨</a>
-        <a href="#how">導入の流れ</a>
-        <a href="#pricing">料金プラン</a>
       </div>
-      <div class="footer-col">
-        <h4>サポート</h4>
-        <a href="#contact">お問い合わせ</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2026 MinaPay Crypto. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script src="assets/js/main.js"></script>
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="pricing-head">
+          <div>
+            <div class="label"><span></span>PRICING</div>
+            <h2>料金について</h2>
+          </div>
+          <p>店舗・事業内容や導入台数などを確認のうえ、営業担当より個別にご案内いたします。</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card pricing-card-primary">
+            <span>PAYMENT FEE</span>
+            <h3>決済手数料</h3>
+            <div class="price-number"><strong>6.5</strong><b>%</b></div>
+            <p>決済金額に対する手数料</p>
+          </article>
+          <article class="pricing-card">
+            <span>TERMINAL PRICE</span>
+            <h3>専用端末代金</h3>
+            <div class="price-contact"><strong>有料</strong><b>要お問い合わせ</b></div>
+            <p>端末代金は導入条件に応じて個別にご案内します。</p>
+          </article>
+        </div>
+        <div class="pricing-note">
+          <div><b>i</b><p>詳細に関しては営業担当へお問い合わせください。導入内容を確認のうえ、個別にお見積もりまたはご案内をさせていただきます。</p></div>
+          <a class="button primary" href="#contact">営業担当へ問い合わせる <b>↗</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow" id="flow">
+      <div class="container"><div class="center-head"><div class="label"><span></span>HOW IT WORKS</div><h2>専用端末で、4ステップ。</h2><p>MinaPay Crypto決済端末の画面に沿って、シンプルに決済を進めます。</p></div><div class="steps">
+        <article><b>01</b><div class="payment-terminal actual-terminal"><img class="terminal-device-photo" src="./assets/terminal/terminal-front.jpeg" alt="MinaPay Crypto実機端末：通貨選択画面" loading="lazy" /><div class="terminal-display-overlay"><img src="./assets/terminal-screen-01.png" alt="" /></div></div><h3>通貨を選択</h3><p>お支払いに使用する暗号資産を選びます。</p></article>
+        <article><b>02</b><div class="payment-terminal actual-terminal"><img class="terminal-device-photo" src="./assets/terminal/terminal-front.jpeg" alt="MinaPay Crypto実機端末：金額入力画面" loading="lazy" /><div class="terminal-display-overlay"><img src="./assets/terminal-screen-02.png" alt="" /></div></div><h3>金額を入力</h3><p>会計金額を入力し、お支払い内容を確認します。</p></article>
+        <article><b>03</b><div class="payment-terminal actual-terminal"><img class="terminal-device-photo" src="./assets/terminal/terminal-front.jpeg" alt="MinaPay Crypto実機端末：QRコード表示画面" loading="lazy" /><div class="terminal-display-overlay"><img src="./assets/terminal-screen-03.png" alt="" /></div></div><h3>QRコードを読み取り</h3><p>利用者のウォレットでQRコードを読み取ります。</p></article>
+        <article><b>04</b><div class="payment-terminal actual-terminal"><img class="terminal-device-photo" src="./assets/terminal/terminal-front.jpeg" alt="MinaPay Crypto実機端末：決済完了画面" loading="lazy" /><div class="terminal-display-overlay"><img src="./assets/terminal-screen-04.png" alt="" /></div></div><h3>支払いを確認</h3><p>決済結果を確認し、店舗で会計を完了します。</p></article>
+      </div></div>
+    </section>
+
+    <section class="section trust">
+      <div class="container trust-grid"><div><div class="label white"><span></span>TRUST &amp; SECURITY</div><h2>新しい決済だからこそ、<br />信頼を設計の中心に。</h2></div><div class="trust-list"><article><b>01</b><div><h3>利用者主体の設計</h3><p>利用者自身がウォレットと秘密鍵を管理する考え方を採用します。</p></div></article><article><b>02</b><div><h3>明確なサービス案内</h3><p>利用方法やサービスの提供範囲を、分かりやすくご案内します。</p></div></article><article><b>03</b><div><h3>上場企業グループの基盤</h3><p>売れるネット広告社グループの連結子会社であるGANECCIが提供します。</p></div></article></div></div>
+    </section>
+
+    <section class="section faq" id="faq"><div class="container"><div class="section-head"><div><div class="label"><span></span>FAQ</div><h2>よくある質問</h2></div></div><div class="faq-list"><details><summary>どのような店舗・事業者が対象ですか？<span>＋</span></summary><p>小売店、飲食店、宿泊施設など、実店舗での決済導入を検討されている事業者を想定しています。具体的な導入条件はお問い合わせください。</p></details><details><summary>既存のPOSやレジと一緒に使えますか？<span>＋</span></summary><p>既存の会計環境と併用しやすい端末型サービスとして開発を進めています。接続・運用条件は個別にご案内します。</p></details><details><summary>いつから利用できますか？<span>＋</span></summary><p>MinaPay Cryptoは2027年1月末のリリースを予定しています。事前相談を受け付けています。</p></details><details><summary>端末代金と決済手数料はいくらですか？<span>＋</span></summary><p>決済手数料は6.5%です。専用端末は有料となり、端末代金は要お問い合わせとなります。詳細に関しては営業担当へお問い合わせいただき、導入内容を確認のうえ、個別にお見積もりまたはご案内をさせていただきます。</p></details></div></div></section>
+
+    <section class="contact" id="contact"><div class="container contact-inner"><div><div class="label white"><span></span>CONTACT</div><h2>暗号資産決済を、<br />あなたの店舗へ。</h2><p>導入のご相談、資料請求、協業に関するお問い合わせを承ります。</p></div><a class="button contact-button" href="mailto:contact@ganecci.net?subject=MinaPay%20Crypto%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">導入について相談する <b>↗</b></a></div></section>
+  </main>
+
+  <footer><div class="container footer-inner"><img src="./assets/minapay-crypto-logo.png" alt="MinaPay Crypto" /><div><p>提供会社：GANECCI株式会社</p><p>© 2026 GANECCI Inc.</p></div></div></footer>
+  <script src="./script.js"></script>
 </body>
 </html>
