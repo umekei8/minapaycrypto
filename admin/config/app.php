@@ -15,11 +15,22 @@ if (file_exists($dbConfig)) {
     require_once $dbConfig;
 }
 
-// Autoload: src/<Namespace>/<Class>.php
+// Autoload: search src/ subdirectories for bare class names
 spl_autoload_register(function (string $class): void {
-    $file = BASE_DIR . '/src/' . str_replace('\\', '/', $class) . '.php';
+    $relative = str_replace('\\', '/', $class) . '.php';
+    // Try exact path first (namespace-based)
+    $file = BASE_DIR . '/src/' . $relative;
     if (file_exists($file)) {
         require_once $file;
+        return;
+    }
+    // Fall back to known subdirectories for bare class names
+    foreach (['Helper', 'Controller', 'Model'] as $sub) {
+        $file = BASE_DIR . '/src/' . $sub . '/' . $relative;
+        if (file_exists($file)) {
+            require_once $file;
+            return;
+        }
     }
 });
 
