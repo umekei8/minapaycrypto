@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 define('INSTALL_VERSION', '1.0.0');
 define('CONFIG_FILE', __DIR__ . '/../config/database.php');
-define('LOCK_FILE',   __DIR__ . '/installed.lock');
+define('LOCK_FILE',   dirname(__DIR__) . '/config/installed.lock');
 
 // すでにインストール済みなら拒否
 if (file_exists(LOCK_FILE)) {
