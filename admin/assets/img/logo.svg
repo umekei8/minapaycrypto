@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Bitcoin-style icon -->
+  <circle cx="24" cy="24" r="22" fill="#c0392b"/>
+  <text x="24" y="31" font-family="Georgia,serif" font-size="26" font-weight="bold"
+        text-anchor="middle" fill="white">₿</text>
+  <!-- Wordmark -->
+  <text x="54" y="20" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+        font-size="16" font-weight="700" fill="#1a1a2e">MinaPay</text>
+  <text x="54" y="38" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+        font-size="11" font-weight="400" fill="#6b7280">Crypto Admin</text>
+</svg>
