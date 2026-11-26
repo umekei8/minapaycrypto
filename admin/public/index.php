@@ -1,10 +1,8 @@
 <?php
 declare(strict_types=1);
 
-define('BASE_DIR', dirname(__DIR__));
-
-// Bootstrap
-require BASE_DIR . '/config/app.php';
+// Bootstrap (BASE_DIR is defined inside app.php)
+require dirname(__DIR__) . '/config/app.php';
 
 // Start session
 Auth::start();
