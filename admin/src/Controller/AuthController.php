@@ -24,11 +24,11 @@ class AuthController
         $password = $_POST['password'] ?? '';
 
         $db    = Database::getInstance();
-        $st    = $db->prepare("SELECT * FROM admins WHERE email=? AND status='active'");
+        $st    = $db->prepare("SELECT * FROM admins WHERE email=?");
         $st->execute([$email]);
         $admin = $st->fetch();
 
-        if ($admin && password_verify($password, $admin['password_hash'])) {
+        if ($admin && password_verify($password, $admin['password'])) {
             Auth::login($admin);
             header('Location: index.php');
         } else {

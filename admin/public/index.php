@@ -90,10 +90,10 @@ switch ($page) {
         // Password change handler
         if (!Auth::verifyCsrf($_POST['_csrf'] ?? '')) { http_response_code(403); exit; }
         $db = Database::getInstance();
-        $st = $db->prepare('SELECT password_hash FROM admins WHERE id=?');
+        $st = $db->prepare('SELECT password FROM admins WHERE id=?');
         $st->execute([Auth::id()]);
         $admin = $st->fetch();
-        if (!$admin || !password_verify($_POST['current_password'] ?? '', $admin['password_hash'])) {
+        if (!$admin || !password_verify($_POST['current_password'] ?? '', $admin['password'])) {
             http_response_code(422);
             echo json_encode(['success'=>false,'message'=>'現在のパスワードが正しくありません。']);
             exit;
@@ -105,7 +105,7 @@ switch ($page) {
             exit;
         }
         $hash = password_hash($new, PASSWORD_BCRYPT, ['cost'=>12]);
-        $db->prepare('UPDATE admins SET password_hash=? WHERE id=?')->execute([$hash, Auth::id()]);
+        $db->prepare('UPDATE admins SET password=? WHERE id=?')->execute([$hash, Auth::id()]);
         header('Content-Type: application/json');
         echo json_encode(['success'=>true,'message'=>'パスワードを変更しました。']);
         break;
