@@ -45,35 +45,45 @@ switch ($page) {
 
     // Merchants
     case 'merchants':
-        (new MerchantController())->index();
+        $action = $_GET['action'] ?? '';
+        if ($action === 'detail') {
+            (new MerchantController())->detail();
+        } else {
+            (new MerchantController())->index();
+        }
         break;
-    case 'merchant-create':
-        (new MerchantController())->create();
+    case 'merchant-save':
+        header('Content-Type: application/json');
+        (new MerchantController())->save();
         break;
-    case 'merchant-update':
-        (new MerchantController())->update();
+    case 'merchant-review':
+        header('Content-Type: application/json');
+        (new MerchantController())->review();
+        break;
+    case 'merchant-delete':
+        header('Content-Type: application/json');
+        (new MerchantController())->delete();
         break;
     case 'merchant-stats':
+        header('Content-Type: application/json');
         (new MerchantController())->stats();
         break;
 
-    // Wallets
-    case 'wallets':
-        (new WalletController())->index();
-        break;
+    // Wallet management (inside merchant)
     case 'wallet-save':
-        (new WalletController())->save();
+        header('Content-Type: application/json');
+        (new MerchantController())->saveWallet();
         break;
 
-    // Devices
-    case 'devices':
-        (new DeviceController())->index();
+    // Device management (inside merchant)
+    case 'device-save':
+        header('Content-Type: application/json');
+        (new MerchantController())->saveDevice();
         break;
-    case 'device-create':
-        (new DeviceController())->create();
-        break;
-    case 'device-regen':
-        (new DeviceController())->regenerateToken();
+
+    // Analytics
+    case 'analytics':
+        (new AnalyticsController())->index();
         break;
 
     // Rates & Settings
