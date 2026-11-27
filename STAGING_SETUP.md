@@ -176,6 +176,68 @@ XSERVERファイルマネージャー → admin/install/install.php を削除
 
 ---
 
+---
+
+## 手順8: Android アプリとの API 連携設定
+
+Admin サーバーが稼働したら、POS 端末（Android アプリ）と連携させます。
+
+### 8-1: 端末 API トークンの確認
+
+Admin ダッシュボードで対象加盟店の**端末設定タブ**を開き、端末の `api_token` を確認します。
+
+phpMyAdmin で直接確認する場合:
+```sql
+SELECT d.device_code, d.name, d.api_token, m.name AS merchant_name
+FROM devices d
+JOIN merchants m ON m.id = d.merchant_id
+WHERE d.status = 'active';
+```
+
+### 8-2: demo_config.json の更新
+
+`app/src/main/assets/config/demo_config.json` の 2 フィールドを設定します:
+
+```json
+{
+  "api_base_url": "https://staging.minapay-crypto.com",
+  "terminal_api_key": "ここにdevicesテーブルのapi_tokenを貼る"
+}
+```
+
+**注意:** `api_base_url` はすでに `https://staging.minapay-crypto.com` が設定済みです。
+`terminal_api_key` のみ実際のトークンを入力してください。
+
+### 8-3: APK ビルド & インストール
+
+```bash
+./gradlew assembleDebug
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+### 8-4: 動作確認
+
+端末で決済を行い、Admin ダッシュボードの**決済一覧**に記録が表示されることを確認します。
+
+| 確認項目 | 期待値 |
+|---------|--------|
+| 決済作成 | QR表示後、Admin の payments テーブルに `status=pending` で記録される |
+| 決済確認 | ブロックチェーン確認後、`status=confirmed` に更新される |
+| /api/config | `Authorization: Bearer <api_token>` でアクセスでき、ウォレット情報が返る |
+
+### API エンドポイント一覧
+
+| メソッド | URL | 説明 |
+|---------|-----|------|
+| POST | `?page=api/payment/create` | 決済作成 |
+| POST | `?page=api/payment/update` | ステータス更新 |
+| GET  | `?page=api/payment/status&payment_code=PAY-...` | ステータス確認 |
+| GET  | `?page=api/config` | 加盟店設定取得 |
+
+**認証:** 全エンドポイントに `Authorization: Bearer <api_token>` ヘッダーが必要です。
+
+---
+
 ## トラブルシューティング
 
 ### 500 Internal Server Error

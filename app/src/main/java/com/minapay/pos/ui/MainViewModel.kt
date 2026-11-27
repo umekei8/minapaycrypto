@@ -268,9 +268,10 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 Log.i(TAG, "▶ Handling CONFIRMED for $paymentId")
                 // DBに保存（DEMOモードでも保存 → getPaymentでnullにならない）
                 withContext(Dispatchers.IO) {
-                    repo.confirmPayment(
+                    repo.confirmPaymentWithNotify(
                         paymentId, event.txHash ?: "",
-                        event.confirmations, event.isDemoConfirmed
+                        event.confirmations, event.isDemoConfirmed,
+                        config
                     )
                 }
                 val updated = withContext(Dispatchers.IO) { repo.getPayment(paymentId) }

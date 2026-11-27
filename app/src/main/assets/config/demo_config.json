@@ -19,7 +19,7 @@
   "max_payment_jpy": 100000000,
   "btc_confirm_threshold": 1,
   "eth_confirm_threshold": 1,
-  "api_base_url": "",
+  "api_base_url": "https://staging.minapay-crypto.com",
   "terminal_api_key": "",
   "demo_mode": false
 }

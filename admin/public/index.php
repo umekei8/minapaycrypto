@@ -10,6 +10,13 @@ Auth::start();
 // Route
 $page = $_GET['page'] ?? 'dashboard';
 
+// API routes — authenticated by device token, not admin session
+if (str_starts_with($page, 'api/')) {
+    $subPath = substr($page, 4); // strip "api/"
+    (new ApiController())->dispatch($subPath);
+    exit;
+}
+
 // Public routes (no auth required)
 if ($page === 'login') {
     $c = new AuthController();

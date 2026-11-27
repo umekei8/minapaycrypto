@@ -1,15 +1,21 @@
 package com.minapay.pos.data.repository
 
+import android.util.Log
+import com.minapay.pos.data.api.AdminApiClient
 import com.minapay.pos.data.api.CoinGeckoClient
 import com.minapay.pos.data.db.MinaPayDatabase
 import com.minapay.pos.data.db.PaymentEntity
 import com.minapay.pos.data.model.*
 import com.minapay.pos.domain.calculator.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 import java.text.SimpleDateFormat
 import java.util.*
+
+private const val TAG = "PaymentRepo"
 
 class PaymentRepository(private val db: MinaPayDatabase) {
     private val dao = db.paymentDao()
@@ -69,7 +75,30 @@ class PaymentRepository(private val db: MinaPayDatabase) {
             qrPayload=qr, status=PaymentStatus.WAITING_PAYMENT,
             expiresAt=System.currentTimeMillis()+config.paymentTimeoutMinutes*60_000L
         )
-        dao.insert(payment.toEntity())  // DEMOモードも含めて全て保存
+        dao.insert(payment.toEntity())
+
+        // Notify Admin server (best-effort, non-blocking IO on IO dispatcher)
+        if (config.apiBaseUrl.isNotBlank() && config.terminalApiKey.isNotBlank()) {
+            withContext(Dispatchers.IO) {
+                try {
+                    AdminApiClient.notifyPaymentCreated(
+                        baseUrl          = config.apiBaseUrl,
+                        apiKey           = config.terminalApiKey,
+                        paymentCode      = paymentId,
+                        currency         = currency.name,
+                        amountJpy        = fiatAmount,
+                        amountCrypto     = cryptoAmt.toPlainString(),
+                        rateJpy          = rateJpy.toPlainString(),
+                        receivingAddress = wallet,
+                        expiresAtMs      = payment.expiresAt,
+                        feePercent       = config.feePercent
+                    )
+                } catch (e: Exception) {
+                    Log.w(TAG, "Admin notify create failed (non-critical): ${e.message}")
+                }
+            }
+        }
+
         return payment
     }
 
@@ -78,6 +107,36 @@ class PaymentRepository(private val db: MinaPayDatabase) {
 
     suspend fun confirmPayment(id: String, tx: String, confirms: Int, demo: Boolean) =
         dao.confirm(id, PaymentStatus.CONFIRMED.name, tx, confirms, System.currentTimeMillis(), demo)
+
+    /**
+     * Confirm payment and notify the Admin server.
+     * [config] is optional — if null or the API key is blank, skips the Admin call.
+     */
+    suspend fun confirmPaymentWithNotify(
+        id: String, tx: String, confirms: Int, demo: Boolean,
+        config: DemoConfig? = null
+    ) {
+        dao.confirm(id, PaymentStatus.CONFIRMED.name, tx, confirms, System.currentTimeMillis(), demo)
+        config?.let { c ->
+            if (c.apiBaseUrl.isNotBlank() && c.terminalApiKey.isNotBlank()) {
+                withContext(Dispatchers.IO) {
+                    try {
+                        AdminApiClient.notifyPaymentUpdate(
+                            baseUrl      = c.apiBaseUrl,
+                            apiKey       = c.terminalApiKey,
+                            paymentCode  = id,
+                            status       = "confirmed",
+                            txHash       = tx,
+                            confirmations = confirms,
+                            memo         = if (demo) "demo_confirmed" else ""
+                        )
+                    } catch (e: Exception) {
+                        Log.w(TAG, "Admin notify confirm failed (non-critical): ${e.message}")
+                    }
+                }
+            }
+        }
+    }
 
     suspend fun cancelPayment(id: String, memo: String?) =
         dao.cancel(id, System.currentTimeMillis(), memo)
